@@ -1,8 +1,5 @@
 package spring.project.best.practices.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
@@ -15,7 +12,7 @@ import java.util.UUID;
 // if you want both you can also use Jpa
 // if you want pages and sorting you can use PagingAndSorting
 @Repository
-public interface MovieRepository extends CrudRepository<Movie, UUID>,PagingAndSortingRepository<Movie, UUID> {
+public interface MovieRepository extends CrudRepository<Movie, UUID>, PagingAndSortingRepository<Movie, UUID> {
 
     Optional<Movie> findMovieById(UUID id);
 

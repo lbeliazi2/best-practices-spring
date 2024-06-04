@@ -21,11 +21,11 @@ public class MovieService {
 
     // only users with the role admin will be able to execute this request
     @PreAuthorize("hasRole('ADMIN')")
-    public Page<Movie> findAll (Pageable p) {
+    public Page<Movie> findAll(Pageable p) {
         return this.movieRepository.findAll(p);
     }
 
-    public Optional<Movie> findById( UUID id) {
+    public Optional<Movie> findById(UUID id) {
         return this.movieRepository.findMovieById(id);
     }
 
