@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-import spring.project.best.practices.entity.Movie;
+import spring.project.best.practices.entity.MovieEntity;
 import spring.project.best.practices.service.MovieService;
 
 import java.net.URI;
@@ -22,6 +22,10 @@ import java.util.UUID;
 public class MainController {
 
     public final MovieService movieService;
+
+    // use records to do the link with the entities
+    // much quicker way than creating a class
+    public record Movie(UUID id, String name) {}
 
     @GetMapping("/movies")
     private ResponseEntity<Page<Movie>> findAll(@PageableDefault(value = 1, page = 0) Pageable p) {

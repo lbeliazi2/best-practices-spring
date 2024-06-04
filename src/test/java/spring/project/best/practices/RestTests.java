@@ -33,6 +33,7 @@ public class RestTests {
 		// Create request entity
 
 		// Perform request
+		// for the others tests we need to use the exchange method
 		ResponseEntity<String> response = authenticatedRestTemplate.getForEntity(String.valueOf(uri), String.class);
 
 		// Assert response
