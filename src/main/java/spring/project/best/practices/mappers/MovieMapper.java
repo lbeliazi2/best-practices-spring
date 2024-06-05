@@ -8,11 +8,6 @@ import spring.project.best.practices.entity.MovieEntity;
 @Mapper(componentModel = "spring")
 public interface MovieMapper {
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "name", target = "name")
     MainController.Movie toDto(MovieEntity movieEntity);
 
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "name", target = "name")
-    MovieEntity toEntity(MainController.Movie movie);
 }

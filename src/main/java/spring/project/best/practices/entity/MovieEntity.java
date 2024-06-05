@@ -10,8 +10,6 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
 @ToString
 @RequiredArgsConstructor
 @Builder

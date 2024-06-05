@@ -17,9 +17,14 @@ import java.net.URI;
 import java.util.Optional;
 import java.util.UUID;
 
+// combines Controller and ResponseBody
+
 @RestController
 @RequiredArgsConstructor
 public class MainController {
+
+    // if we have multiple beans of the name movieService
+    // we would need to add a qualifier in the constructor to add the name of the bean to make sure we have the right one
 
     public final MovieService movieService;
 
@@ -35,6 +40,8 @@ public class MainController {
 
 
     @GetMapping("/movie/{id}")
+    // use @RequestParam if we are in this format ?userid=1234
+    // you can write required = false if you want to make it optional
     private ResponseEntity<Movie> findMovie(@PathVariable("id") UUID id) {
         Optional<Movie> movieOptional = this.movieService.findById(id);
         // use this
